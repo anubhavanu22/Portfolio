@@ -34,6 +34,7 @@ body {
     background-color: var(--background);
     color: var(--foreground);
     line-height: 1.6;
+    
 }
 
 html {
@@ -166,6 +167,7 @@ html {
     width: 100%;
     z-index: 50;
     transition: var(--transition-smooth);
+    background-color: #f9f9f9; 
 }
 
 .nav.scrolled {
@@ -448,6 +450,7 @@ html {
     grid-template-columns: 1fr;
     gap: 3rem;
     align-items: center;
+    
 }
 
 @media (min-width: 1024px) {
@@ -473,10 +476,20 @@ html {
     }
 }
 
+/* .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px -5px hsla(233, 89%, 63%, 0.1);
+    border: 4px solid hsla(233, 89%, 63%, 0.2);
+} */
+
 .about-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center; /* Show face properly, avoid cutting */
     border-radius: 50%;
     box-shadow: 0 10px 25px -5px hsla(233, 89%, 63%, 0.1);
     border: 4px solid hsla(233, 89%, 63%, 0.2);
@@ -973,6 +986,39 @@ html {
 
 .project-buttons .btn {
     flex: 1;
+}
+
+
+/* Statistics Section */
+#statistics {
+  padding: 80px 0;
+  background: #f9f9f9; /* light background for contrast */
+}
+
+.statistics-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.statistics-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 800px;
+}
+
+.statistics-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.statistics-img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 /* Contact Section */
