@@ -92,11 +92,28 @@
                     </div> -->
 
 <div class="hero-buttons">
-    <a href="https://drive.google.com/file/d/1p_McmzoSRzG_ghzQvJvd0F1CM9dvMVee/view?usp=sharing" download class="btn btn-hero btn-xl">
+    <!-- <a href="https://drive.google.com/file/d/1p_McmzoSRzG_ghzQvJvd0F1CM9dvMVee/view?usp=sharing" download class="btn btn-hero btn-xl">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
         View Resume
+    </a> -->
+    <a href="https://drive.google.com/file/d/1p_McmzoSRzG_ghzQvJvd0F1CM9dvMVee/view?usp=sharing" 
+       target="_blank" 
+       class="btn btn-hero btn-xl">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        View Resume
+    </a>
+
+    <!-- Download Resume (direct PDF download) -->
+    <a href="https://drive.google.com/uc?export=download&id=1p_McmzoSRzG_ghzQvJvd0F1CM9dvMVee" 
+       class="btn btn-hero btn-xl">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Download Resume
     </a>
     <button onclick="scrollToSection('projects')" class="btn btn-hero-outline btn-xl">
         <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -895,10 +912,45 @@
 </body>
 </html>
 <script >
+// const hamburger = document.getElementById("hamburger");
+// const navLinks = document.getElementById("nav-links");
+// const navLinkItems = document.querySelectorAll(".nav-link");
+
+// // Toggle menu on hamburger click
+// hamburger.addEventListener("click", () => {
+//   navLinks.classList.toggle("active");
+// });
+
+// // Close menu when a nav link is clicked
+// navLinkItems.forEach(link => {
+//   link.addEventListener("click", () => {
+//     navLinks.classList.remove("active");
+//   });
+// });
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+// Show menu when mouse enters hamburger
+hamburger.addEventListener("mouseenter", () => {
+  navLinks.classList.add("active");
 });
+
+// Keep menu visible when hovering inside it
+navLinks.addEventListener("mouseenter", () => {
+  navLinks.classList.add("active");
+});
+
+// Hide menu when mouse leaves both hamburger and menu
+hamburger.addEventListener("mouseleave", () => {
+  setTimeout(() => {
+    if (!navLinks.matches(":hover")) {
+      navLinks.classList.remove("active");
+    }
+  }, 200); // small delay for smoother UX
+});
+
+navLinks.addEventListener("mouseleave", () => {
+  navLinks.classList.remove("active");
+});
+
 </script>
